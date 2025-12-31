@@ -3,45 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Year By  Vishal</title>
+  <title>New Year By Vishal</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-<script>
-  const audio = document.getElementById("bgMusic");
-
-  // Try to play after page load
-  window.addEventListener('load', () => {
-    audio.volume = 0.3; // 30% volume
-    audio.play().catch(() => {
-      // Autoplay blocked, user must click
-      console.log("Autoplay blocked, click to start music");
+  <script>
+    const audio = document.getElementById("bgMusic");
+    window.addEventListener('load', () => {
+      audio.volume = 0.3; // 30% volume
+      audio.play().catch(() => {
+        console.log("Autoplay blocked, click to start music");
+      });
     });
-  });
 
-  // Optional: Add a click listener to force play
-  document.body.addEventListener('click', () => {
-    audio.play();
-  });
-</script>
-
+    document.body.addEventListener('click', () => {
+      audio.play();
+    });
+  </script>
 
   <!-- Instagram Logo -->
   <a href="https://www.instagram.com/adarshvishal_18" target="_blank" class="insta-only">
     <img src="photo.png" alt="Instagram">
   </a>
 
-  <!-- Center Text -->
+  <!-- Center Title -->
   <h1 id="title">Happy New Year..!</h1>
 
-  <!-- Quote below center -->
+  <!-- Sub Quote -->
   <div class="ny-sub-quote">
     May the coming year be filled with joy, smiles, and beautiful moments.
   </div>
@@ -49,22 +44,19 @@
   <!-- Background stars -->
   <div class="stars"></div>
 
-  <!-- Mountains -->
+  <!-- Mountains Layer 1 -->
   <svg class="mountains mountains--layer1" xmlns="http://www.w3.org/2000/svg"
-       width="1920" height="200" viewBox="0 0 1920 200" preserveAspectRatio="none">
-    <path d="M0,41.57s21.25,2.19,27.33,2.19,22.27-4.37,28.34,0-1,22.94,6.07,19.67S72.87,52,81,52.81s16.19,10.15,22.27,0
-      ... (path same as before) ...
-      V200H0Z"/>
+       viewBox="0 0 1920 200" preserveAspectRatio="none">
+    <path d="M0,41.57s21.25,2.19,27.33,2.19,22.27-4.37,28.34,0-1,22.94,6.07,19.67S72.87,52,81,52.81s16.19,10.15,22.27,0 V200H0Z"/>
   </svg>
 
+  <!-- Mountains Layer 2 -->
   <svg class="mountains mountains--layer2" xmlns="http://www.w3.org/2000/svg"
-       width="1920" height="200" viewBox="0 0 1920 200" preserveAspectRatio="none">
-    <path d="M0,82.09s21.14-13,30.14-19
-      ... (path same as before) ...
-      V200H0Z"/>
+       viewBox="0 0 1920 200" preserveAspectRatio="none">
+    <path d="M0,82.09s21.14-13,30.14-19 V200H0Z"/>
   </svg>
 
-  <!-- JS -->
+  <!-- JS Libraries -->
   <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
   <script src="app.js"></script>
 
