@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css?family=Caveat");
+html,
+body {
+  background: linear-gradient(to bottom, #090513 0%, #964987 75%, #fdbca3 100%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ny-sub-quote {
+  position: fixed;          /* 🔥 absolute ❌ fixed ✅ */
+  top: calc(50% + 70px);    /* Happy New Year ke niche */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 26px;
+  color: #ffffff;
+  font-family: 'Caveat', cursive;
+  z-index: 100000000;       /* 🔥 stars se upar */
+  opacity: 1;               /* animation hata diya */
+  max-width: 80%;
+}
+
+.insta-only {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999999999;
+}
+
+.insta-only img {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: rotation 360s infinite linear;
+          animation: rotation 360s infinite linear;
+}
+.stars:after, .stars:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQAQMAAAC6caSPAAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAAIVJREFUeAHt2SEOwkAQhtFJKuqKRRGOgKzgUMgKRI/G0ZDoacNkN/ue/zJ+/ugBcI+01/EEAGBc04FkP58AVFoi7VaSLAEAAPB/j0hbK678AADMkXbZG03mGA0AAKsP3JgAAGDa88knsuZ8Mp1M6gEAPFtNrtEjtkh7lyRb3/PAWpS0BPgC0PMMdOEjXqoAAAAASUVORK5CYII=");
+}
+.stars:after {
+  background-size: 100px;
+  opacity: 0.4;
+}
+.stars:before {
+  background-size: 200px;
+  opacity: 0.6;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+h1 {
+  font-size: calc(1.5em + 5vw);
+  color: #fff;
+  font-family: "Caveat", sans-serif;
+  text-align: center;
+  padding: 0.5em;
+  transform: rotate(-4deg) translateY(-15vh);
+}
+
+.mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  min-width: 100%;
+  height: 60px;
+  fill: #000022;
+}
+
+.mountains--layer1 {
+  z-index: 2;
+}
+
+.mountains--layer2 {
+  fill: #9d5189;
+  z-index: 0;
+}
+.ny-sub-quote {
+  position: fixed;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  text-align: center;
+  font-size: 26px;
+  color: #ffffff;
+  font-family: 'Caveat', cursive;
+  opacity: 0;
+  z-index: 99999;
+
+  /* TEXT animation */
+  animation: quoteFadeUp 1.8s ease forwards;
+  animation-delay: 1s;
+}
+
+/* Quote text animation */
+@keyframes quoteFadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* UNDERLINE */
+.ny-sub-quote::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  margin: 10px auto 0;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+
+  /* Line animation */
+  animation: underlineGrow 1.5s ease forwards;
+  animation-delay: 2.2s;
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ny-sub-quote {
+    font-size: 18px;
+    top: 62%;
+  }
+}
